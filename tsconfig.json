@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "strict": true,
+    "diagnostics": true,
+    "esModuleInterop": true,
+    "downlevelIteration": true,
+    "incremental": true,
+    "moduleResolution": "NodeNext",
+    "outDir": "dist",
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "pretty": false,
+    "removeComments": true,
+    "extendedDiagnostics": true,
+    "traceResolution": false,
+    "allowJs": false
+  },
+  "exclude": ["node_modules/**/*"],
+  "include": ["src/**/*"]
+}
