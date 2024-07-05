@@ -41,7 +41,7 @@ yarn dev
 ```
 
 ## CLI Reference
-`--gen`: Generates optimized video and stops.
-`--extract`: Extracts all frames from optimized video and stops.
-`--force`: Removes all temporary files (optimized video and frames) and regenerates them.
-`--verbose`: Displays debugging info.
+ - `--gen`: Generates optimized video and stops.
+ - `--extract`: Extracts all frames from optimized video and stops.
+ - `--force`: Removes all temporary files (optimized video and frames) and regenerates them.
+ - `--verbose`: Displays debugging info.
