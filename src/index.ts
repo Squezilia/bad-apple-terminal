@@ -12,6 +12,7 @@ import GetMetadata from "./GetMetadata";
 import CreateOptimizedVersion from "./CreateOptimizedVersion";
 import SecondsToTimeline from "./SecondsToTimeline";
 import { Image, loadImage } from "canvas";
+import { Stream } from "stream";
 
 // Global Declarations
 export var argv:
@@ -151,7 +152,6 @@ async function Draw() {
   let frame_draw_start: number = Date.now();
 
   for (let i = 0; i < images.length; i++) {
-    console.clear();
     frame_draw_start = Date.now();
     seconds = i / parseInt(VIDEO_FPS);
     progress = Buffer.alloc(
@@ -173,7 +173,13 @@ async function Draw() {
     );
     if (argv?.verbose)
       ascii_viewport.push(`Frame Delay: ${Date.now() - frame_draw_start}ms`);
-    console.log(ascii_viewport.join("\n"));
+
+    var lines = process.stdout.getWindowSize()[1] - ascii_viewport.length - 1;
+    for (let j = 0; j < lines; j++) {
+      ascii_viewport.push("\r\n");
+    }
+    process.stdout.write(ascii_viewport.join("\n"));
+    // console.log(ascii_viewport);
     await Timer(TIME_BETWEEN_VIDEO_FRAMES);
   }
 }
